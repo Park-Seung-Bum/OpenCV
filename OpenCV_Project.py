@@ -16,7 +16,7 @@ prevx, prevy = 0, 0
 color = [(0, 0, 255), (0, 255, 255), (0, 255, 0), (255, 0, 0), (0, 0, 0)]
 color_index = 0
 selected_color = color[color_index]
-# Get tools function
+
 def getTool(x):
     if x < 50 + ml:
         return "line"
@@ -38,12 +38,12 @@ hands = mp.solutions.hands
 hand_landmark = hands.Hands(min_detection_confidence=0.6, min_tracking_confidence=0.6, max_num_hands=1)
 draw = mp.solutions.drawing_utils
 
-# Drawing tools
+# 도구툴
 tools = cv2.imread("tools2.png")
 tools = tools.astype('uint8')
 
 
-# brush image show
+# 색상 툴
 def brush_tool():
     red_brush = cv2.imread("red_brush.png", cv2.IMREAD_UNCHANGED)
     yellow_brush = cv2.imread("yellow_brush.png", cv2.IMREAD_UNCHANGED)
